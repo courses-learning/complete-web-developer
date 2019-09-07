@@ -1,47 +1,55 @@
-// Create an object and an array which we will use in our facebook exercise.
+// Setup user database
+var database = [
+    {
+        username: "davidw",
+        password: "password123",
+        timeline: "Been for a run this morning"
+    },
+    {
+        username: "nicolaw",
+        password: "npw123",
+        timeline: "Off to work"
+    },
+    {
+        username: "joew",
+        password: "cars",
+        timeline: "Can't find my shoes"
+    }
+];
 
-// 1. Create an object that has properties "username" and "password". Fill those values in with strings.
+// Unused code practicing adding object elements to array with forEach loop
+// var newsFeed = [];
+//
+// database.forEach(function(person) {
+//     newsFeed.push({
+//         username: (person.username),
+//         timeline: (person.timeline)
+//     });
+// });
 
-var user = {
-    username: "davidw",
-    password: "password123"
-}
-
-// 2. Create an array which contains the object you have made above and name the array "database".
-
-var database = [user];
-
-// 3. Create an array called "newsfeed" which contains 3 objects with properties "username" and "timeline".
-
-var user1 = {
-    username: "davidw",
-    timeline: "Been for a run this morning"
-}
-
-var user2 = {
-    username: "nicolaw",
-    timeline: "Off to work"
-}
-
-var user3 = {
-    username: "joew",
-    timeline: "Can't find my shoes"
-}
-
-var newsFeed = [user1, user2, user3];
-
-// Facebook code along
-
+// Get login details via prompt
 var userNamePrompt = prompt("What's your username? ")
 var passwordPrompt = prompt("What's your password? ")
 
+// Function to confirm valid
 function signIn(userNamePrompt, passwordPrompt) {
-    if (userNamePrompt === database[0].username &&
-        passwordPrompt === database[0].password) {
-        console.log(newsFeed);
-    } else {
-        alert("Sorry wrong username or password")
+    for (var i=0; i < database.length; i++) {
+        if (userNamePrompt === database[i].username &&
+            passwordPrompt === database[i].password) {
+            return true;
+        }
     }
+    return false;
 }
 
-signIn(userNamePrompt, passwordPrompt)
+// Perform login and check
+check = signIn(userNamePrompt, passwordPrompt);
+
+// Display formatted feed using forEach loop if valid login or alert if not
+if (check) {
+    database.forEach(function(person) {
+        console.log(person.username + ": " + person.timeline);
+    });
+} else {
+    alert("Incorrect username or password");
+}
