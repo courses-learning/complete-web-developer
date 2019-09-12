@@ -1,60 +1,25 @@
-/* body{
-   overflow:hidden;
-} */
 .coolTitle {
-   font-family:arial;
-   font-weight:900;
-   font-size:19em;
-   text-align:center;
-   background:repeating-linear-gradient(45deg, black, lime 5px);
-   position:relative;
-   -webkit-background-clip:text;
-   -webkit-text-stroke:7px black;
-   color:transparent;
-   bottom:200px;
-   animation:float 2s ease-in-out infinite;
+  text-align: center;
+  font-family: 'Oswald', Helvetica, sans-serif;
+  font-size: 40px;
+  transform: skewY(-10deg);
+  letter-spacing: 4px;
+  word-spacing: -8px;
+  color: tomato;
+  text-shadow:
+    -1px -1px 0 firebrick,
+    -2px -2px 0 firebrick,
+    -3px -3px 0 firebrick,
+    -4px -4px 0 firebrick,
+    -5px -5px 0 firebrick,
+    -6px -6px 0 firebrick,
+    -7px -7px 0 firebrick,
+    -8px -8px 0 firebrick,
+    -30px 20px 40px dimgrey;
 }
-.coolTitle::before{
-   z-index:2;
-   position:absolute;
-   width:10%;
-   height:10%;
-   top:0;
-   left:0;
-    background:repeating-linear-gradient(-45deg, black, transparent 5px);
-   -webkit-background-clip:text;
-   -webkit-text-stroke:12px lightgreen;
+
+.done {
+  text-decoration: line-through;
 }
-.coolTitle::after{
-   z-index:2;
-   position:absolute;
-   width:10%;
-   height:10%;
-   top:0;
-   left:0;
-   background:radial-gradient(circle at 0 0, transparent 40%, rgba(255,255, 255, 0.6), transparent 60%);
-   -webkit-background-clip:text;
-   animation:shine 2s ease-in-out infinite;
-}
-@keyframes float{
-   0%{
-      transform:perspective(500px)rotatey(30deg);
-   }
-   50%{
-      transform:perspective(500px)rotatey(-30deg);
-   }
-   100%{
-      transform:perspective(500px)rotatey(30deg);
-   }
-}
-@keyframes shine {
-   0%{
-      background-position:-300px;
-   }
-   50%{
-      background-position:300px;
-   }
-   100%{
-      background-position:-300px;
-   }
-}
+
+texthere
